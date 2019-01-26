@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Treehouse.FitnessFrog.Data;
 using Treehouse.FitnessFrog.Models;
@@ -51,10 +50,13 @@ namespace Treehouse.FitnessFrog.Controllers
         //[ActionName("Add"), HttpPost]
         //public ActionResult AddPost(){
         [HttpPost]
-        public ActionResult Add(string date, string activityId, string duration,
-            string intensity,string exclude, string notes)
+        public ActionResult Add(DateTime? date, int? activityId, double? duration,
+            Entry.IntensityLevel? intensity,bool? exclude, string notes)
         {
             //string data = Request.Form["Date"];
+            ////DateTime dateValue;
+            ////DateTime.TryParse(date, out dateValue);
+
             ViewBag.Date = date;
             ViewBag.ActivityId = activityId;
             ViewBag.Duration = duration;
